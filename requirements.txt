@@ -1,0 +1,3 @@
+pywinstyles
+customtkinter
+pillow
