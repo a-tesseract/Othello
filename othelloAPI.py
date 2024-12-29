@@ -37,7 +37,7 @@ class API:
         return possible_move_coordinates
 
     def __check_valid_move(self, row: int, col: int) -> list[list[int]]:
-        if self.__board[row][col] != " ":
+        if self.__board[row][col] not in " N":
             return []
         player = "B" if self.black_move else "W"
         opponent = "B" if not self.black_move else "W"
