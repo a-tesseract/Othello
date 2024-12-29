@@ -1,4 +1,5 @@
 class Othello:
+    
     def __init__(self):
         self.__board = [
             [" ", " ", " ", " ", " ", " ", " ", " "],
