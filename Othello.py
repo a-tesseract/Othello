@@ -16,7 +16,7 @@ class Othello:
     def __valid_coord(self, x, y) -> bool:
         return 0 <= x <= 7 and 0 <= y <= 7
 
-    def __check_valid_move(self, row : int, col : int) -> [[]]:
+    def __check_valid_move(self, row : int, col : int) -> list[list[int]]:
         if self.__board[row][col] != " ":
             return []
         player = "B" if self.black_move else "W"
@@ -59,6 +59,6 @@ class Othello:
         self.black_move = not self.black_move
         self.__board[row][col] = player
 
-    def get_board(self) -> [[]]:
+    def get_board(self) -> list[list[str]]:
         return self.__board
 
