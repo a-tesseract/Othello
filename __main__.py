@@ -13,6 +13,9 @@ PATHS = {
     "empty.ico" : DIR+"\\assets\\icons\\empty.ico",
     "Wooden Background.png" : DIR+"\\assets\\images\\Wooden Background.png"
 }
+Othello = API()
+
+grid = [[None]*8 for i in range(8)]
 
 class App(CTk):
 
@@ -73,5 +76,68 @@ class Board(CTkFrame):
                     fg_color="#16995f",
                     corner_radius=10
                 ).grid(row=_row, column=_column, sticky="nsew", padx=5, pady=5)
+
+        board.makeBoard()
+
+    def makeBoard(board) -> None:
+        for i in range(8):
+            for j in range(8):
+                if grid[i][j]:
+                    grid[i][j].grid_forget()
+                    grid[i][j] = None
+
+        for row, line in enumerate(Othello.get_board()):
+            for column, peice in enumerate(line):
+                match peice:
+
+                    case "W": 
+                        grid[row][column] = Coin(board, "W", row, column)
+                        grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
+
+                    case "B": 
+                        grid[row][column] = Coin(board, "B", row, column)
+                        grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
+
+                    case "N": 
+                        grid[row][column] = Coin(board, "N", row, column)
+                        grid[row][column].bind("<Button>", grid[row][column].N)
+                        grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
+
+class Coin(CTkCanvas):
+
+    def __init__(coin, master: Board, peice: str, row: int, column: int) -> None:
+        super().__init__(
+            master,
+            bg="#16995f",
+            bd=0
+        )
+        set_opacity(coin, color="#f0f0f0")
+        coin.parent = master
+
+        coin.row = row
+        coin.column = column
+
+        dash = (1, 1)
+        width = 0
+        outline = "white"
+        if peice == "W":
+            fill = "white"
+        elif peice == "B":
+            fill = "black"
+        else:
+            fill = "#16995f"
+            width = 5
+
+        coin.create_oval(
+            3, 3, 55, 55, 
+            fill=fill,
+            outline=outline,
+            width=width,
+            dash=dash
+        )
+
+    def N(coin, _):
+        Othello.make_move(coin.row, coin.column)
+        coin.parent.makeBoard()
 
 app = App()
