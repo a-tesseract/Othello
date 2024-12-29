@@ -1,5 +1,5 @@
 class API:
-    
+
     def __init__(self):
         self.__board = [
             [" ", " ", " ", " ", " ", " ", " ", " "],
@@ -16,7 +16,20 @@ class API:
     def __valid_coord(self, x, y) -> bool:
         return 0 <= x <= 7 and 0 <= y <= 7
 
-    def __check_valid_move(self, row : int, col : int) -> list[list[int]]:
+    def __get_possible_moves(self) -> list[list[int]]:
+        player = "B" if self.black_move else "W"
+        opponent = "B" if not self.black_move else "W"
+
+        possible_move_coordinates = []
+
+        for i in range(8):
+            for j in range(8):
+                trav_list = self.__check_valid_move(i, j)
+                if trav_list:
+                    possible_move_coordinates.append([i, j])
+        return possible_move_coordinates
+
+    def __check_valid_move(self, row: int, col: int) -> list[list[int]]:
         if self.__board[row][col] != " ":
             return []
         player = "B" if self.black_move else "W"
@@ -27,8 +40,8 @@ class API:
         all_possible_directions = [[0, 1], [0, -1], [1, 0], [-1, 0], [1, 1], [1, -1], [-1, 1], [-1, -1]]
 
         for x, y in all_possible_directions:
-            nx = x+row
-            ny = y+col
+            nx = x + row
+            ny = y + col
             if self.__valid_coord(nx, ny) and self.__board[nx][ny] == opponent:
                 travers_possible = True
                 while self.__board[nx][ny] != player:
@@ -37,12 +50,12 @@ class API:
                     if not self.__valid_coord(nx, ny):
                         travers_possible = False
                         break
-                if travers_possible and self.__board[nx][ny]!= " ":
+                if travers_possible and self.__board[nx][ny] != " ":
                     traverse_lists.append([x, y])
 
         return traverse_lists
 
-    def make_move(self, row : int,  col : int) -> None:
+    def make_move(self, row: int, col: int) -> None:
         traversals = self.__check_valid_move(row, col)
         if not traversals:
             return
@@ -60,5 +73,10 @@ class API:
         self.__board[row][col] = player
 
     def get_board(self) -> list[list[str]]:
+        coordinates = self.__get_possible_moves()
+        for x, y in coordinates:
+            self.__board[x][y] = "N"
+
         return self.__board
+
 
