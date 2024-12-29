@@ -1,4 +1,4 @@
-class Othello:
+class API:
     
     def __init__(self):
         self.__board = [
