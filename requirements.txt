@@ -1,3 +1,4 @@
 pywinstyles
 customtkinter
 pillow
+pyglet
