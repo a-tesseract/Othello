@@ -88,7 +88,7 @@ class Board(CTkFrame):
         for row, line in enumerate(map_):
             for column, peice in enumerate(line):
                 if grid[row][column]:
-                    grid[row][column].grid_forget()
+                    grid[row][column].destroy()
                     grid[row][column] = None
 
                 if peice in "NBW":
@@ -109,10 +109,11 @@ class Coin(CTkLabel):
             image=CTkImage(
                 Image.open(PATHS[f"{rename[peice]} Peice.png"]),
                 Image.open(PATHS[f"{rename[peice]} Peice.png"]),
-                (50, 50)
+                (42, 42)
             ), 
             fg_color="#16995f",
-            anchor="center"
+            anchor="center",
+            bg_color="#f0f0f0"
         )
         set_opacity(coin, color="#f0f0f0")
         coin.parent = master
