@@ -13,12 +13,19 @@ class API:
         ]
         self.black_move = True
 
+    def get_score(self) -> list[int]:
+        white_score = 0
+        black_score = 0
+        for i in self.__board:
+            white_score+= i.count("W")
+            black_score+= i.count("B")
+
+        return [white_score, black_score]
+
     def __valid_coord(self, x, y) -> bool:
         return 0 <= x <= 7 and 0 <= y <= 7
 
     def __get_possible_moves(self) -> list[list[int]]:
-        player = "B" if self.black_move else "W"
-        opponent = "B" if not self.black_move else "W"
 
         possible_move_coordinates = []
 
@@ -69,7 +76,8 @@ class API:
                 self.__board[nx][ny] = player
                 nx += x
                 ny += y
-        self.black_move = not self.black_move
+        if self.__get_possible_moves():
+            self.black_move = not self.black_move
         self.__board[row][col] = player
 
     def get_board(self) -> list[list[str]]:
