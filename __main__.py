@@ -11,7 +11,10 @@ if not path.exists(DIR):
 
 PATHS = {
     "empty.ico" : DIR+"\\assets\\icons\\empty.ico",
-    "Wooden Background.png" : DIR+"\\assets\\images\\Wooden Background.png"
+    "Wooden Background.png" : DIR+"\\assets\\images\\Wooden Background.png",
+    "Black Peice.png" : DIR+"\\assets\\images\\Black Peice.png",
+    "White Peice.png" : DIR+"\\assets\\images\\White Peice.png",
+    "Empty Peice.png" : DIR+"\\assets\\images\\Empty Peice.png",
 }
 Othello = API()
 
@@ -80,61 +83,42 @@ class Board(CTkFrame):
         board.makeBoard()
 
     def makeBoard(board) -> None:
-        for i in range(8):
-            for j in range(8):
-                if grid[i][j]:
-                    grid[i][j].grid_forget()
-                    grid[i][j] = None
 
-        for row, line in enumerate(Othello.get_board()):
+        map_ = Othello.get_board()
+        for row, line in enumerate(map_):
             for column, peice in enumerate(line):
-                match peice:
+                if grid[row][column]:
+                    grid[row][column].grid_forget()
+                    grid[row][column] = None
 
-                    case "W": 
-                        grid[row][column] = Coin(board, "W", row, column)
-                        grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
+                if peice in "NBW":
+                    grid[row][column] = Coin(board, peice, row, column)
+                    grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
 
-                    case "B": 
-                        grid[row][column] = Coin(board, "B", row, column)
-                        grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
+                if peice == "N":
+                    grid[row][column].bind("<Button>", grid[row][column].N)
 
-                    case "N": 
-                        grid[row][column] = Coin(board, "N", row, column)
-                        grid[row][column].bind("<Button>", grid[row][column].N)
-                        grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
-
-class Coin(CTkCanvas):
+class Coin(CTkLabel):
 
     def __init__(coin, master: Board, peice: str, row: int, column: int) -> None:
+        rename = {"W":"White", "B":"Black", "N":"Empty"}
+
         super().__init__(
             master,
-            bg="#16995f",
-            bd=0
+            text="",
+            image=CTkImage(
+                Image.open(PATHS[f"{rename[peice]} Peice.png"]),
+                Image.open(PATHS[f"{rename[peice]} Peice.png"]),
+                (50, 50)
+            ), 
+            fg_color="#16995f",
+            anchor="center"
         )
         set_opacity(coin, color="#f0f0f0")
         coin.parent = master
 
         coin.row = row
         coin.column = column
-
-        dash = (1, 1)
-        width = 0
-        outline = "white"
-        if peice == "W":
-            fill = "white"
-        elif peice == "B":
-            fill = "black"
-        else:
-            fill = "#16995f"
-            width = 5
-
-        coin.create_oval(
-            3, 3, 55, 55, 
-            fill=fill,
-            outline=outline,
-            width=width,
-            dash=dash
-        )
 
     def N(coin, _):
         Othello.make_move(coin.row, coin.column)
