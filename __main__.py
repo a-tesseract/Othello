@@ -22,8 +22,8 @@ class App(CTk):
         app.resizable(False, False)
 
         change_border_color(app, "#48280e")
-        change_header_color(app, "#9f6834")
-        change_title_color(app, "#9f6834")
+        change_header_color(app, "#48280e")
+        change_title_color(app, "#48280e")
 
         app.iconbitmap(PATHS["empty.ico"])
 
