@@ -82,7 +82,9 @@ class API:
                 self.__board[nx][ny] = player
                 nx += x
                 ny += y
-        if self.__get_possible_moves():
+
+        self.black_move = not self.black_move
+        if not self.__get_possible_moves():
             self.black_move = not self.black_move
         self.__board[row][col] = player
 
