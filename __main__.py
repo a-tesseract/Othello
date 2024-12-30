@@ -280,6 +280,12 @@ class Board(CTkFrame):
         board.header.blackScore.scoreVar.set(Othello.get_score()[1])
         board.header.whiteScore.scoreVar.set(Othello.get_score()[0])
 
+        if sum(Othello.get_score()) == 64 or min(Othello.get_score()) == 0:
+            if Othello.get_score()[0] == Othello.get_score()[1]:
+                print("Tie")
+            else:
+                print("White" if Othello.get_score()[0] > Othello.get_score()[1] else "Black", "wins")
+
 class Coin(CTkLabel):
 
     def __init__(coin, master: Board, peice: str, row: int, column: int) -> None:
