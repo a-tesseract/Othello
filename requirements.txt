@@ -2,3 +2,4 @@ pywinstyles
 customtkinter
 pillow
 pyglet
+tkmacosx

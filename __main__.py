@@ -2,8 +2,10 @@ from othelloAPI import API
 from customtkinter import *
 from pywinstyles import *
 from os import getlogin, path, makedirs
-from PIL import Image
+from PIL import Image, ImageTk
 from pyglet import options, font
+from tkmacosx import CircleButton
+from webbrowser import open_new_tab
 
 USER = getlogin()
 DIR = f"C:\\Users\\{USER}\\AppData\\Local\\Othello"
@@ -20,7 +22,8 @@ PATHS = {
     "Logo.png" : DIR+"\\assets\\icons\\Logo.png",
     "JetBrainsMono-Bold.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Bold.ttf",
     "JetBrainsMono-Light.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Light.ttf",
-    "JetBrainsMono-Medium.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Medium.ttf"
+    "JetBrainsMono-Medium.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Medium.ttf",
+    "GitHub Logo.png" : DIR+"\\assets\\images\\GitHub Logo.png"
 }
 
 options['win32_gdi_font'] = True
@@ -36,13 +39,14 @@ class App(CTk):
 
     def __init__(app) -> None:
         super().__init__()
-        app.geometry("600x700+10+10")
+        app.geometry("700x700+10+10")
         app.resizable(False, False)
         app.title("Othello")
 
         app.rowconfigure(0, weight=1, uniform="a")
         app.rowconfigure(1, weight=6, uniform="a")
         app.columnconfigure(0, weight=1, uniform="a")
+        app.columnconfigure(1, weight=6, uniform="a")
 
         change_border_color(app, "#48280e")
         change_header_color(app, "#48280e")
@@ -54,6 +58,9 @@ class App(CTk):
             Image.open(PATHS["Logo.png"]),
             (35, 35)
         )
+        app.githubLogo = ImageTk.PhotoImage(
+            Image.open(PATHS["GitHub Logo.png"]).resize((75, 75))
+        )
 
         app.background = CTkLabel(
             app,
@@ -61,22 +68,50 @@ class App(CTk):
             image=CTkImage(
                 Image.open(PATHS["Wooden Background.png"]),
                 Image.open(PATHS["Wooden Background.png"]),
-                (700, 800)
+                (800, 800)
             ), 
             anchor="center"
         )
-        app.background.grid(row=0, column=0, sticky="nsew", rowspan=2)
+        app.background.grid(row=0, column=0, sticky="nsew", rowspan=2, columnspan=2)
 
         app.header = Header(
             app,
             app.logo
         )
-        app.header.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+        app.header.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
 
         app.board = Board(app, app.header)
-        app.board.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
+        app.board.grid(row=1, column=1, sticky="nsew", padx=10, pady=10)
+
+        app.extension = Extension(app, app.githubLogo)
+        app.extension.grid(row=0, column=0, sticky="nsew", padx=10, pady=10, rowspan=2)
 
         app.mainloop()
+
+class Extension(CTkFrame):
+
+    def __init__(ext, master: App, logo: ImageTk.PhotoImage) -> None:
+        super().__init__(
+            master,
+            fg_color="#aa7138",
+            bg_color="#aa7138"
+        )
+        set_opacity(ext, color="#aa7138")
+
+        ext.columnconfigure(0, weight=1, uniform="a")
+        ext.rowconfigure(0, weight=1, uniform="a")
+        ext.rowconfigure((1, 2), weight=4, uniform="a")
+
+        ext.github = CircleButton(
+            ext,
+            borderless=1,
+            image=logo,
+            bg='#202224',
+            focuscolor="#202224",
+            radius=40,
+            command=lambda: open_new_tab("https://github.com/a-tesseract/Othello")
+        )
+        ext.github.grid(row=0, column=0)
 
 class Header(CTkFrame):
 
