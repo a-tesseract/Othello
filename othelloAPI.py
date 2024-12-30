@@ -99,6 +99,6 @@ class API:
 
     def game_complete(self) -> bool:
         for line in self.__board:
-            if " " in self.__board:
+            if " " in line:
                 return True
         return False
