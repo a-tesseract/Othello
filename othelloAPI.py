@@ -96,9 +96,3 @@ class API:
 
     def previous_board(self) -> list[list[str]]:
         return self.__previous_board
-
-    def game_complete(self) -> bool:
-        for line in self.__board:
-            if " " in line:
-                return False
-        return True
