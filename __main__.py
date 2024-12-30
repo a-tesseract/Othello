@@ -23,7 +23,8 @@ PATHS = {
     "JetBrainsMono-Bold.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Bold.ttf",
     "JetBrainsMono-Light.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Light.ttf",
     "JetBrainsMono-Medium.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Medium.ttf",
-    "GitHub Logo.png" : DIR+"\\assets\\images\\GitHub Logo.png"
+    "GitHub Logo.png" : DIR+"\\assets\\images\\GitHub Logo.png",
+    "Board.png" : DIR+"\\assets\\images\\Board.png"
 }
 
 options['win32_gdi_font'] = True
@@ -295,15 +296,16 @@ class Board(CTkFrame):
         board.rowconfigure((0, 1, 2, 3, 4, 5, 6, 7), weight=1, uniform="a")
         board.columnconfigure((0, 1, 2, 3, 4, 5, 6, 7), weight=1, uniform="a")
 
-        for _row in range(8):
-            for _column in range(8):
-                CTkLabel(
-                    board,
-                    text="",
-                    bg_color="#202224",
-                    fg_color="#16995f",
-                    corner_radius=10
-                ).grid(row=_row, column=_column, sticky="nsew", padx=5, pady=5)
+        board.board = CTkLabel(
+            board,
+            image=CTkImage(
+                Image.open(PATHS["Board.png"]),
+                Image.open(PATHS["Board.png"]),
+                (580, 579)
+            ),
+            text=""
+        )
+        board.board.place(relx=0, rely=0, relwidth=1, relheight=1)
 
         board.makeBoard()
 
