@@ -38,6 +38,7 @@ class App(CTk):
         super().__init__()
         app.geometry("600x700+10+10")
         app.resizable(False, False)
+        app.title("Othello")
 
         app.rowconfigure(0, weight=1, uniform="a")
         app.rowconfigure(1, weight=6, uniform="a")
@@ -224,6 +225,22 @@ class ToPlay(CTkFrame):
         card.name.configure(fg_color="#000000" if Othello.black_move else "#eff1f5")
         card.subtext.configure(text_color="#000000" if Othello.black_move else "#eff1f5")
 
+    def winner(card, winner: str) -> None:
+        card.configure(border_color="#000000" if winner == "black" else "#eff1f5")
+        card.nameVar.set("BLACK" if winner == "black" else "WHITE")
+        card.name.configure(text_color="#eff1f5" if winner == "black" else "#000000")
+        card.name.configure(fg_color="#000000" if winner == "black" else "#eff1f5")
+        card.subtext.configure(text_color="#000000" if winner == "black" else "#eff1f5")
+        card.subtext.configure(text="WINS")
+
+    def tie(card, turn: str) -> None:
+        card.configure(border_color="#000000" if turn == "black" else "#eff1f5")
+        card.nameVar.set("TIE")
+        card.name.configure(text_color="#eff1f5" if turn == "black" else "#000000")
+        card.name.configure(fg_color="#000000" if turn == "black" else "#eff1f5")
+        card.subtext.configure(text_color="#000000" if turn == "black" else "#eff1f5")
+        card.subtext.configure(text="IT'S A")
+
 class Board(CTkFrame):
 
     def __init__(board, master: App, header: Header) -> None:
@@ -236,6 +253,7 @@ class Board(CTkFrame):
             bg_color="black"
         )
         board.header = header
+        board.parent = master
 
         set_opacity(board, color="black")
 
@@ -282,9 +300,81 @@ class Board(CTkFrame):
 
         if sum(Othello.get_score()) == 64 or min(Othello.get_score()) == 0:
             if Othello.get_score()[0] == Othello.get_score()[1]:
-                print("Tie")
+                turn = "white" if Othello.black_move else "black"
+
+                board.tieScreen = TieScreen(
+                    board, 
+                    turn
+                )
+                board.tieScreen.place(relx=0, rely=0, relheight=1, relwidth=1)
+
+                board.header.toPlay.tie(turn)
             else:
-                print("White" if Othello.get_score()[0] > Othello.get_score()[1] else "Black", "wins")
+                winner = "white" if Othello.get_score()[0] > Othello.get_score()[1] else "black"
+
+                board.winScreen = WinScreen(
+                    board, 
+                    winner
+                )
+                board.winScreen.place(relx=0, rely=0, relheight=1, relwidth=1)
+
+                board.header.toPlay.winner(winner)
+
+class TieScreen(CTkFrame):
+
+    def __init__(screen, master: Board, turn: str) -> None:
+        super().__init__(
+            master,
+            fg_color="#eff1f5" if turn == "white" else "#000000",
+            corner_radius=10
+        )
+        set_opacity(screen, 0.8)
+
+        screen.winner = CTkLabel(
+            screen,
+            font=("JetBrains Mono Bold", 100),
+            text="TIE",
+            text_color="#eff1f5" if turn == "black" else "#000000",
+            fg_color="#eff1f5" if turn == "white" else "#000000",
+        )
+        screen.winner.place(relx=0.5, rely=0.56, anchor="center")
+
+        screen.sub = CTkLabel(
+            screen,
+            font=("JetBrains Mono Medium", 40),
+            text="IT'S A",
+            text_color="#eff1f5" if turn == "black" else "#000000",
+            fg_color="#eff1f5" if turn == "white" else "#000000",
+        )
+        screen.sub.place(relx=0.5, rely=0.44, anchor="center")
+
+class WinScreen(CTkFrame):
+
+    def __init__(screen, master: Board, winner: str) -> None:
+        super().__init__(
+            master,
+            fg_color="#eff1f5" if winner == "white" else "#000000",
+            corner_radius=10
+        )
+        set_opacity(screen, 0.8)
+
+        screen.winner = CTkLabel(
+            screen,
+            font=("JetBrains Mono Bold", 100),
+            text=winner.upper(),
+            text_color="#eff1f5" if winner == "black" else "#000000",
+            fg_color="#eff1f5" if winner == "white" else "#000000",
+        )
+        screen.winner.place(relx=0.5, rely=0.44, anchor="center")
+
+        screen.sub = CTkLabel(
+            screen,
+            font=("JetBrains Mono Medium", 40),
+            text="WINS",
+            text_color="#eff1f5" if winner == "black" else "#000000",
+            fg_color="#eff1f5" if winner == "white" else "#000000",
+        )
+        screen.sub.place(relx=0.5, rely=0.56, anchor="center")
 
 class Coin(CTkLabel):
 
