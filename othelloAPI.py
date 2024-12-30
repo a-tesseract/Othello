@@ -100,5 +100,5 @@ class API:
     def game_complete(self) -> bool:
         for line in self.__board:
             if " " in line:
-                return True
-        return False
+                return False
+        return True
