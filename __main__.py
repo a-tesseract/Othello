@@ -36,7 +36,7 @@ class App(CTk):
 
     def __init__(app) -> None:
         super().__init__()
-        app.geometry("600x700")
+        app.geometry("600x700+10+10")
         app.resizable(False, False)
 
         app.rowconfigure(0, weight=1, uniform="a")
@@ -275,7 +275,7 @@ class Board(CTkFrame):
                     grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
 
                 if peice == "N":
-                    grid[row][column].bind("<Button>", grid[row][column].N)
+                    grid[row][column].bind("<Button>", grid[row][column].button)
 
         board.header.blackScore.scoreVar.set(Othello.get_score()[1])
         board.header.whiteScore.scoreVar.set(Othello.get_score()[0])
@@ -303,7 +303,7 @@ class Coin(CTkLabel):
         coin.row = row
         coin.column = column
 
-    def N(coin, _):
+    def button(coin, _):
         Othello.make_move(coin.row, coin.column)
         coin.parent.makeBoard()
 
