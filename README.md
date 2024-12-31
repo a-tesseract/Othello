@@ -56,8 +56,17 @@ Othello is licensed under the [**CC0 1.0 Universal License**](https://github.com
 <br><br>
 <div align="center">
 
+# [**`Contributing`**](https://github.com/a-tesseract/Othello/blob/main/.github/CONTRIBUTING.md "Contributing on Othello")
+
+</div>
+
+Follow the [CONTRIBUTING.md](https://github.com/a-tesseract/Othello/blob/main/.github/CONTRIBUTING.md "Contributing for Othello") to ensure a smooth contribution process.
+
+<br><br>
+<div align="center">
+
 # [**`Code Of Conduct`**](https://www.contributor-covenant.org/ "Contributor Covenant Website")
 
 </div>
 
-Othello is licensed under the [**Contributor Covenant Code of Conduct**](hhttps://github.com/a-tesseract/Othello/blob/main/.github/CODE_OF_CONDUCT.md "Code Of Conduct for Othello").
+Othello has the [**Contributor Covenant Code of Conduct**](https://github.com/a-tesseract/Othello/blob/main/.github/CODE_OF_CONDUCT.md "Code Of Conduct for Othello").
