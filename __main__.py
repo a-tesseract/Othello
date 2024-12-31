@@ -319,17 +319,25 @@ class Board(CTkFrame):
 
         board.header.toPlay.switchPlay()
 
+        for row in range(8):
+            for col in  range(8):
+                if grid[row][col]:
+                    if grid[row][col].peice == "N":
+                        grid[row][col].destroy()
+                        grid[row][col] = None
+
         for row, line in enumerate(Othello.get_board()):
             for column, peice in enumerate(line):
-                if grid[row][column]:
-                    grid[row][column].destroy()
-                    grid[row][column] = None
-
-                if peice in "NBW":
+                if peice in "BW":
+                    if grid[row][column]:
+                        if grid[row][column].peice == peice:
+                            continue
                     grid[row][column] = Coin(board, peice, row, column)
                     grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
 
-                if peice == "N":
+                elif peice == "N":
+                    grid[row][column] = Coin(board, peice, row, column)
+                    grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
                     grid[row][column].bind("<Button>", grid[row][column].button)
 
         board.header.blackScore.scoreVar.set(Othello.get_score()[1])
@@ -436,8 +444,18 @@ class Coin(CTkLabel):
         coin.row = row
         coin.column = column
 
+        coin.peice = peice
+
     def button(coin, _):
         Othello.make_move(coin.row, coin.column)
+        coin.configure(
+            image=CTkImage(
+                Image.open(PATHS[f"{"Black" if Othello.black_move else "White"} Peice.png"]),
+                Image.open(PATHS[f"{"Black" if Othello.black_move else "White"} Peice.png"]),
+                (42, 42)
+            ), 
+        )
+        coin.peice = "B" if Othello.black_move else "W"
         coin.parent.makeBoard()
 
 app = App()
