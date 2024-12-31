@@ -100,6 +100,9 @@ Thanks to [JetBrains](https://github.com/JetBrains "JetBrains on GitHub"), for p
 ## Python Modules
 Thanks to on the [modules](https://github.com/a-tesseract/Othello/blob/v1.0.0/requirements.txt) on which Othello is built on.
 
+## Original Game
+Thanks to **Goro Hasegawa** who is credited for inventing the original board game Othello, also known as *Reversi*.
+
 <br><br>
 <div align="center">
 
