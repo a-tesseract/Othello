@@ -20,6 +20,7 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 * [**`Installation`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#installation)
 * [**`Contributors`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributors)
 * [**`License`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#license)
+* [**`Credit`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#credit)
 * [**`Contributing`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributing)
 * [**`Code Of Conduct`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#code-of-conduct)
 * [**`Security`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#security)
@@ -85,6 +86,19 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 </div>
 
 Othello is licensed under the [**CC0 1.0 Universal License**](https://github.com/a-tesseract/Othello/blob/main/LICENSE.md "License for Othello").
+
+<br><br>
+<div align="center">
+
+# **`Credit`**
+
+</div>
+
+## JetBrains Mono
+Thanks to [JetBrains](https://github.com/JetBrains "JetBrains on GitHub"), for providing the [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) font.
+
+## Python Modules
+Thanks to on the [modules](https://github.com/a-tesseract/Othello/blob/v1.0.0/requirements.txt) on which Othello is built on.
 
 <br><br>
 <div align="center">
