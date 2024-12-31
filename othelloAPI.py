@@ -96,3 +96,17 @@ class API:
 
     def previous_board(self) -> list[list[str]]:
         return self.__previous_board
+    
+    def reset(self) -> None:
+        self.__board = [
+            [" ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", "B", "W", " ", " ", " "],
+            [" ", " ", " ", "W", "B", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " "],
+            [" ", " ", " ", " ", " ", " ", " ", " "]
+        ]
+        self.__previous_board = None
+        self.black_move = True

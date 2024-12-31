@@ -32,7 +32,7 @@ font.add_file(PATHS["JetBrainsMono-Bold.ttf"])
 font.add_file(PATHS["JetBrainsMono-Light.ttf"])
 font.add_file(PATHS["JetBrainsMono-Medium.ttf"])
 
-grid = [[None]*8 for i in range(8)]
+grid = [[None]*8 for _ in range(8)]
 
 Othello = API()
 
@@ -75,23 +75,25 @@ class App(CTk):
         )
         app.background.grid(row=0, column=0, sticky="nsew", rowspan=2, columnspan=2)
 
-        app.header = Header(
-            app,
-            app.logo
-        )
+        app.header = Header(app, app.logo)
         app.header.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
 
         app.board = Board(app, app.header)
         app.board.grid(row=1, column=1, sticky="nsew", padx=10, pady=10)
 
-        app.extension = Extension(app, app.githubLogo)
+        app.extension = Extension(
+            app, 
+            app.githubLogo, 
+            app.board, 
+            app.header
+        )
         app.extension.grid(row=0, column=0, sticky="nsew", padx=10, pady=10, rowspan=2)
 
         app.mainloop()
 
 class Extension(CTkFrame):
 
-    def __init__(ext, master: App, logo: ImageTk.PhotoImage) -> None:
+    def __init__(ext, master: App, logo: ImageTk.PhotoImage, board: "Board", header: "Header") -> None:
         super().__init__(
             master,
             fg_color="#aa7138",
@@ -99,9 +101,13 @@ class Extension(CTkFrame):
         )
         set_opacity(ext, color="#aa7138")
 
+        ext.header = header
+        ext.board = board
+
         ext.columnconfigure(0, weight=1, uniform="a")
-        ext.rowconfigure(0, weight=1, uniform="a")
-        ext.rowconfigure((1, 2), weight=4, uniform="a")
+        ext.rowconfigure(0, weight=3, uniform="a")
+        ext.rowconfigure(1, weight=1, uniform="a")
+        ext.rowconfigure((2, 3), weight=12, uniform="a")
 
         ext.github = CircleButton(
             ext,
@@ -110,9 +116,38 @@ class Extension(CTkFrame):
             bg='#202224',
             focuscolor="#202224",
             radius=40,
-            command=lambda: open_new_tab("https://github.com/a-tesseract/Othello")
+            command=lambda: open_new_tab("https://github.com/a-tesseract")
         )
         ext.github.grid(row=0, column=0)
+
+        ext.restartButton = CTkButton(
+            ext,
+            fg_color="#16995f",
+            text="R\nE\nS\nT\nA\nR\nT",
+            font=("JetBrains Mono Bold", 25),
+            text_color="#202224",
+            hover_color="#202224",
+            command=ext.restart
+        )
+        ext.restartButton.bind("<Enter>", lambda _: ext.restartButton.configure(text_color="#16995f", fg_color="#202224"))
+        ext.restartButton.bind("<Leave>", lambda _: ext.restartButton.configure(text_color="#202224", fg_color="#16995f"))
+        ext.restartButton.grid(row=2, column=0, sticky="nsew", padx=10, pady=5)
+
+    def restart(ext) -> None:    
+        if sum(Othello.get_score()) != 4:
+            for row in range(8):
+                for column in range(8):
+                    if grid[row][column] != None:
+                        grid[row][column].destroy()
+                        grid[row][column] = None
+
+            Othello.reset()
+            ext.board.makeBoard()
+
+            ext.header.toPlay.switchPlay()
+
+            ext.header.blackScore.scoreVar.set(2)
+            ext.header.whiteScore.scoreVar.set(2)
 
 class Header(CTkFrame):
 
@@ -130,6 +165,7 @@ class Header(CTkFrame):
         header.rowconfigure(0, weight=1, uniform="a")
 
         header.name = Name(header, logo)
+        header.name.bind("<Button>", lambda _: open_new_tab("https://github.com/a-tesseract/Othello"))
         header.name.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
         header.toPlay = ToPlay(header)
@@ -237,8 +273,8 @@ class ToPlay(CTkFrame):
             card,
             textvariable=card.nameVar,
             fg_color="#000000",
-            font=("JetBrains Mono Bold", 20),
             text_color="#eff1f5",
+            font=("JetBrains Mono Bold", 20),
             corner_radius=5
         )
         set_opacity(card.name, color="#16995f")
@@ -332,6 +368,8 @@ class Board(CTkFrame):
                     if grid[row][column]:
                         if grid[row][column].peice == peice:
                             continue
+                        else: 
+                            grid[row][column].destroy()
                     grid[row][column] = Coin(board, peice, row, column)
                     grid[row][column].grid(row=row, column=column, sticky="nsew", padx=15, pady=15)
 
