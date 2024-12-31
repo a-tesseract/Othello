@@ -133,6 +133,19 @@ class Extension(CTkFrame):
         ext.restartButton.bind("<Leave>", lambda _: ext.restartButton.configure(text_color="#202224", fg_color="#16995f"))
         ext.restartButton.grid(row=2, column=0, sticky="nsew", padx=10, pady=5)
 
+        ext.undoButton = CTkButton(
+            ext,
+            fg_color="#16995f",
+            text="U\nN\nD\nO",
+            font=("JetBrains Mono Bold", 25),
+            text_color="#202224",
+            hover_color="#202224",
+            command=ext.undo
+        )
+        ext.undoButton.bind("<Enter>", lambda _: ext.undoButton.configure(text_color="#16995f", fg_color="#202224"))
+        ext.undoButton.bind("<Leave>", lambda _: ext.undoButton.configure(text_color="#202224", fg_color="#16995f"))
+        ext.undoButton.grid(row=3, column=0, sticky="nsew", padx=10, pady=5)
+
     def restart(ext) -> None:    
         if sum(Othello.get_score()) != 4:
             for row in range(8):
@@ -148,6 +161,22 @@ class Extension(CTkFrame):
 
             ext.header.blackScore.scoreVar.set(2)
             ext.header.whiteScore.scoreVar.set(2)
+
+    def undo(ext) -> None:
+        if Othello.previous_board():
+            for row in range(8):
+                for column in range(8):
+                    if grid[row][column] != None:
+                        grid[row][column].destroy()
+                        grid[row][column] = None
+
+            Othello.undo()
+            ext.board.makeBoard()
+
+            ext.header.toPlay.switchPlay()
+
+            ext.header.blackScore.scoreVar.set(Othello.get_score()[1])
+            ext.header.whiteScore.scoreVar.set(Othello.get_score()[0])
 
 class Header(CTkFrame):
 

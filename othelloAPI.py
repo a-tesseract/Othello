@@ -113,5 +113,12 @@ class API:
             [" ", " ", " ", " ", " ", " ", " ", " "],
             [" ", " ", " ", " ", " ", " ", " ", " "]
         ]
-        self.__previous_board = None
+        self.__previous_board = []
         self.black_move = True
+    
+    def undo(self) -> None:
+        self.__board = []
+        for line in self.__previous_board:
+            self.__board.append(line.copy())
+        self.__previous_board = []
+        self.black_move = not self.black_move
