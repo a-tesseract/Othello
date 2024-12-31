@@ -22,6 +22,7 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 * [**`License`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#license)
 * [**`Contributing`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributing)
 * [**`Code Of Conduct`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#code-of-conduct)
+* [**`Security`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#security)
 
 <br><br>
 <div align="center">
@@ -102,3 +103,12 @@ Follow the [CONTRIBUTING.md](https://github.com/a-tesseract/Othello/blob/main/.g
 </div>
 
 Othello has the [**Contributor Covenant Code of Conduct**](https://github.com/a-tesseract/Othello/blob/main/.github/CODE_OF_CONDUCT.md "Code Of Conduct for Othello").
+
+<br><br>
+<div align="center">
+
+# [**`Security`**](https://github.com/a-tesseract/Othello/blob/main/.github/SECURITY.md "Security on Othello")
+
+</div>
+
+To view the security and data safety of Othello, see [`SECURITY.md`](https://github.com/a-tesseract/Othello/blob/main/.github/SECURITY.md "Security on Othello").
