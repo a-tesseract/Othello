@@ -49,7 +49,7 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 
 4. Install the needed [*requirements*](https://github.com/a-tesseract/Othello/blob/v1.0.0/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
 
-5. Run the `__main__.py`, which starts the game.
+5. Run the [`__main__.py`](https://github.com/a-tesseract/Othello/blob/v1.0.0/__main__.py "__main__.py"), which starts the game.
 
 <br><br>
 <div align="center">
