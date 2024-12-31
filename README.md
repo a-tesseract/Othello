@@ -41,3 +41,12 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 </div>
 
 Othello is licensed under the [**CC0 1.0 Universal License**](https://github.com/a-tesseract/Othello/blob/main/LICENSE.md "License for Othello").
+
+<br><br>
+<div align="center">
+
+# [**`Code Of Conduct`**](https://www.contributor-covenant.org/ "Contributor Covenant Website")
+
+</div>
+
+Othello is licensed under the [**Contributor Covenant Code of Conduct**](hhttps://github.com/a-tesseract/Othello/blob/main/.github/CODE_OF_CONDUCT.md "Code Of Conduct for Othello").
