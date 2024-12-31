@@ -11,7 +11,7 @@ class API:
             [" ", " ", " ", " ", " ", " ", " ", " "],
             [" ", " ", " ", " ", " ", " ", " ", " "]
         ]
-        self.__previous_board = None
+        self.__previous_board = []
         self.black_move = True
 
     def get_score(self) -> list[int]:
@@ -69,7 +69,12 @@ class API:
         return traverse_lists
 
     def make_move(self, row: int, col: int) -> None:
-        self.__previous_board = self.__board.copy()
+        # self.__previous_board = self.__board.copy()
+        self.__previous_board.clear()
+        for line in self.__board:
+            temp = line.copy()
+            self.__previous_board.append(temp)
+
         traversals = self.__check_valid_move(row, col)
         if not traversals:
             return
