@@ -13,16 +13,15 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 <br><br>
 
 # **`Contents`**
-
-* [`**How To Play**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#how-to-play)
-* [`**Status**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#status)
-* [`**Installation**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#installation)
-* [`**Contributors**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributors)
-* [`**License**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#license)
-* [`**Contributing**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributing)
-* [`**Code Of Conduct**`](https://github.com/a-tesseract/Othello?tab=readme-ov-file#code-of-conduct)
-
 </div>
+
+* [**`How To Play`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#how-to-play)
+* [**`Status`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#status)
+* [**`Installation`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#installation)
+* [**`Contributors`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributors)
+* [**`License`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#license)
+* [**`Contributing`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributing)
+* [**`Code Of Conduct`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#code-of-conduct)
 
 <br><br>
 <div align="center">
