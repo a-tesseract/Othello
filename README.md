@@ -36,6 +36,17 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 <br><br>
 <div align="center">
 
+# [**`Contributors`**](https://github.com/a-tesseract/Othello/graphs/contributors "Othello Contributors")
+
+</div>
+
+<a href="https://github.com/a-tesseract/Othello/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=a-tesseract/Othello" height=50>
+</a>
+
+<br><br>
+<div align="center">
+
 # [**`License`**](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en "CC0 1.0 Universal Website")
 
 </div>
