@@ -7,7 +7,7 @@ Thank you for considering contributing to Othello! Your help is greatly apprecia
 1. **Fork the repository**: Create a personal fork of the project on GitHub.
 2. **Clone your fork**: Clone your forked repository to your local machine.
     ```sh
-    git clone https://github.com/your-username/Othello.git
+    git clone https://github.com/a-tesseract/Othello.git
     ```
 3. **Create a branch**: Create a new branch for your changes.
     ```sh
