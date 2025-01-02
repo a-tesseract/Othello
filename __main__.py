@@ -286,6 +286,12 @@ class Extension(CTkFrame):
             ext.header.blackScore.scoreVar.set(2)
             ext.header.whiteScore.scoreVar.set(2)
 
+            try: ext.board.winScreen.place_forget()
+            except: pass
+
+            try: ext.board.tieScreen.place_forget()
+            except: pass
+
     def undo(ext) -> None:
         if Othello.previous_board():
             for row in range(8):
@@ -301,6 +307,12 @@ class Extension(CTkFrame):
 
             ext.header.blackScore.scoreVar.set(Othello.get_score()[1])
             ext.header.whiteScore.scoreVar.set(Othello.get_score()[0])
+
+            try: ext.board.winScreen.place_forget()
+            except: pass
+
+            try: ext.board.tieScreen.place_forget()
+            except: pass
 
 class Header(CTkFrame):
 
