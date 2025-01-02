@@ -56,16 +56,16 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 
 </div>
 
-1. Open the [**latest release**](https://github.com/a-tesseract/Othello/releases/tag/v1.0.0 "v1.0.0").
+1. Open the [**latest release**](https://github.com/a-tesseract/Othello/releases/tag/v1.0.1 "v1.0.1").
 
-2. Install the [`Source code`](https://github.com/a-tesseract/Othello/archive/refs/tags/v1.0.0.zip "Source Code installation"). 
+2. Install the [`Source code`](https://github.com/a-tesseract/Othello/archive/refs/tags/v1.0.1.zip "Source Code installation"). 
 
-3. Move the [**assets/**](https://github.com/a-tesseract/Othello/tree/v1.0.0/assets) to the following folder: 
+3. Move the [**assets/**](https://github.com/a-tesseract/Othello/tree/v1.0.1/assets) to the following folder: 
 `C:\Users\YOUR_USERNAME\AppData\Local\Othello`.
 
-4. Install the needed [*requirements*](https://github.com/a-tesseract/Othello/blob/v1.0.0/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
+4. Install the needed [*requirements*](https://github.com/a-tesseract/Othello/blob/v1.0.1/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
 
-5. Run the [`__main__.py`](https://github.com/a-tesseract/Othello/blob/v1.0.0/__main__.py "__main__.py"), which starts the game.
+5. Run the [`__main__.py`](https://github.com/a-tesseract/Othello/blob/v1.0.1/__main__.py "__main__.py"), which starts the game.
 
 <br><br>
 <div align="center">
@@ -98,7 +98,7 @@ Othello is licensed under the [**CC0 1.0 Universal License**](https://github.com
 Thanks to [JetBrains](https://github.com/JetBrains "JetBrains on GitHub"), for providing the [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) font.
 
 ## Python Modules
-Thanks to on the [modules](https://github.com/a-tesseract/Othello/blob/v1.0.0/requirements.txt) on which Othello is built on.
+Thanks to on the [modules](https://github.com/a-tesseract/Othello/blob/main/requirements.txt) on which Othello is built on.
 
 ## Original Game
 Thanks to **Goro Hasegawa** who is credited for inventing the original board game Othello, also known as *Reversi*.
