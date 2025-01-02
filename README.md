@@ -56,16 +56,16 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 
 </div>
 
-1. Open the [**latest release**](https://github.com/a-tesseract/Othello/releases/tag/v1.0.1 "v1.0.1").
+1. Open the [**latest release**](https://github.com/a-tesseract/Othello/releases/tag/v1.0.2 "v1.0.1").
 
-2. Install the [`Source code`](https://github.com/a-tesseract/Othello/archive/refs/tags/v1.0.1.zip "Source Code installation"). 
+2. Install the [`Source code`](https://github.com/a-tesseract/Othello/archive/refs/tags/v1.0.2.zip "Source Code installation"). 
 
-3. Move the [**assets/**](https://github.com/a-tesseract/Othello/tree/v1.0.1/assets) to the following folder: 
+3. Move the [**assets/**](https://github.com/a-tesseract/Othello/tree/v1.0.2/assets) to the following folder: 
 `C:\Users\YOUR_USERNAME\AppData\Local\Othello`.
 
-4. Install the needed [*requirements*](https://github.com/a-tesseract/Othello/blob/v1.0.1/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
+4. Install the needed [*requirements*](https://github.com/a-tesseract/Othello/blob/v1.0.2/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
 
-5. Run the [`__main__.py`](https://github.com/a-tesseract/Othello/blob/v1.0.1/__main__.py "__main__.py"), which starts the game.
+5. Run the [`__main__.py`](https://github.com/a-tesseract/Othello/blob/v1.0.2/__main__.py "__main__.py"), which starts the game.
 
 <br><br>
 <div align="center">
