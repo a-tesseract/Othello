@@ -34,7 +34,7 @@ class API:
     def __valid_coord(self, x, y) -> bool:
         return 0 <= x <= 7 and 0 <= y <= 7
 
-    def __get_possible_moves(self) -> list[list[int]]:
+    def get_possible_moves(self) -> list[list[int]]:
 
         possible_move_coordinates = []
 
@@ -96,12 +96,12 @@ class API:
                 nx += x
                 ny += y
 
-        if self.__get_possible_moves():
+        if self.get_possible_moves():
             self.black_move = not self.black_move
         self.__board[row][col] = player
 
     def get_board(self) -> list[list[str]]:
-        coordinates = self.__get_possible_moves()
+        coordinates = self.get_possible_moves()
         for x, y in coordinates:
             self.__board[x][y] = "N"
 
@@ -546,7 +546,7 @@ class Board(CTkFrame):
         board.header.blackScore.scoreVar.set(Othello.get_score()[1])
         board.header.whiteScore.scoreVar.set(Othello.get_score()[0])
 
-        if sum(Othello.get_score()) == 64 or min(Othello.get_score()) == 0:
+        if sum(Othello.get_score()) == 64 or min(Othello.get_score()) == 0 or not Othello.get_possible_moves():
             if Othello.get_score()[0] == Othello.get_score()[1]:
                 turn = "white" if Othello.black_move else "black"
 
