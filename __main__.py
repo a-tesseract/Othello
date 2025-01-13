@@ -147,8 +147,8 @@ PATHS = {
     "JetBrainsMono-Bold.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Bold.ttf",
     "JetBrainsMono-Light.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Light.ttf",
     "JetBrainsMono-Medium.ttf" : DIR+"\\assets\\fonts\\JetBrainsMono-Medium.ttf",
-    "GitHub Logo.png" : DIR+"\\assets\\images\\GitHub Logo.png",
-    "Board.png" : DIR+"\\assets\\images\\Board.png"
+    "Board.png" : DIR+"\\assets\\images\\Board.png",
+    "How To Play.png" : DIR+"\\assets\\images\\How To Play.png",
 }
 
 options['win32_gdi_font'] = True
@@ -183,9 +183,6 @@ class App(CTk):
             Image.open(PATHS["Logo.png"]),
             (35, 35)
         )
-        app.githubLogo = ImageTk.PhotoImage(
-            Image.open(PATHS["GitHub Logo.png"]).resize((75, 75))
-        )
 
         app.background = CTkLabel(
             app,
@@ -206,8 +203,7 @@ class App(CTk):
         app.board.grid(row=1, column=1, sticky="nsew", padx=10, pady=10)
 
         app.extension = Extension(
-            app, 
-            app.githubLogo, 
+            app,
             app.board, 
             app.header
         )
@@ -217,13 +213,14 @@ class App(CTk):
 
 class Extension(CTkFrame):
 
-    def __init__(ext, master: App, logo: ImageTk.PhotoImage, board: "Board", header: "Header") -> None:
+    def __init__(ext, master: App, board: "Board", header: "Header") -> None:
         super().__init__(
             master,
             fg_color="#aa7138",
             bg_color="#aa7138"
         )
         set_opacity(ext, color="#aa7138")
+        ext.parent = master
 
         ext.header = header
         ext.board = board
@@ -236,11 +233,15 @@ class Extension(CTkFrame):
         ext.github = CircleButton(
             ext,
             borderless=1,
-            image=logo,
-            bg='#202224',
+            text="❔",
+            bg='#16995f',
             focuscolor="#202224",
+            foreground="#202224",
+            activebackground="#202224",
+            activeforeground="#16995f",
             radius=40,
-            command=lambda: open_new_tab("https://github.com/a-tesseract")
+            command=ext.show,
+            font=("JetBrains Mono Light", 40)
         )
         ext.github.grid(row=0, column=0)
 
@@ -269,6 +270,8 @@ class Extension(CTkFrame):
         ext.undoButton.bind("<Enter>", lambda _: ext.undoButton.configure(text_color="#16995f", fg_color="#202224"))
         ext.undoButton.bind("<Leave>", lambda _: ext.undoButton.configure(text_color="#202224", fg_color="#16995f"))
         ext.undoButton.grid(row=3, column=0, sticky="nsew", padx=10, pady=5)
+
+        ext.help = None
 
     def restart(ext) -> None:    
         if sum(Othello.get_score()) != 4:
@@ -313,6 +316,39 @@ class Extension(CTkFrame):
 
             try: ext.board.tieScreen.place_forget()
             except: pass
+
+    def show(ext) -> None:
+        if ext.help == None or not ext.help.winfo_exists():
+            ext.help = Help(ext.parent)
+        else:
+            ext.help.focus()
+
+class Help(CTkToplevel):
+
+    def __init__(top, master: App) -> None:
+        super().__init__(master, fg_color="#202224")
+        top.title("Othello | How To Play")
+
+        top.geometry("590x600")
+        top.resizable(False, False)
+        top.after(200, lambda: top.iconbitmap(PATHS["empty.ico"]))
+        
+        change_border_color(top, "#202224")
+        change_header_color(top, "#202224")
+        change_title_color(top, "#202224")
+
+        top.image = CTkLabel(
+            top,
+            text="",
+            image=CTkImage(
+                Image.open(PATHS["How To Play.png"]),
+                Image.open(PATHS["How To Play.png"]),
+                (590, 600)
+            )
+        )
+        top.image.pack(expand=True, fill="both")
+
+        top.after(200, top.focus)
 
 class Header(CTkFrame):
 
