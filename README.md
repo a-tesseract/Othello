@@ -81,11 +81,11 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 <br><br>
 <div align="center">
 
-# [**`License`**](https://creativecommons.org/publicdomain/zero/1.0/legalcode.en "CC0 1.0 Universal Website")
+# [**`License`**](https://opensource.org/license/mit "MIT License @ Open Source")
 
 </div>
 
-Othello is licensed under the [**CC0 1.0 Universal License**](https://github.com/a-tesseract/Othello/blob/main/LICENSE.md "License for Othello").
+Othello is licensed under the [**MIT License**](https://github.com/a-tesseract/Othello/blob/main/LICENSE.md "License for Othello").
 
 <br><br>
 <div align="center">
