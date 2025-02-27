@@ -1,8 +1,8 @@
 <div align="center">
 
-[<img src="https://github.com/a-tesseract/Othello/blob/main/assets/icons/Logo.png" alt="assets/images/Logo.png" width=110>](https://github.com/a-tesseract/Othello "Othello on GitHub")
+[<img src="https://github.com/Infinium-Inc/Othello/blob/main/assets/icons/Logo.png" alt="assets/images/Logo.png" width=110>](https://github.com/Infinium-Inc/Othello "Othello on GitHub")
 
-# [**`Othello`**](https://github.com/a-tesseract/Othello "Othello on GitHub")
+# [**`Othello`**](https://github.com/Infinium-Inc/Othello "Othello on GitHub")
 
 ### **`Othello` a.k.a `Reversi`**
 **Othello**, also known as **Reversi**, is a _classic_, _abstract_, _strategy_ board game for two players.
@@ -15,15 +15,15 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 # **`Contents`**
 </div>
 
-* [**`How To Play`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#how-to-play)
-* [**`Status`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#status)
-* [**`Installation`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#installation)
-* [**`Contributors`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributors)
-* [**`License`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#license)
-* [**`Credit`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#credit)
-* [**`Contributing`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#contributing)
-* [**`Code Of Conduct`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#code-of-conduct)
-* [**`Security`**](https://github.com/a-tesseract/Othello?tab=readme-ov-file#security)
+* [**`How To Play`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#how-to-play)
+* [**`Status`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#status)
+* [**`Installation`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#installation)
+* [**`Contributors`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#contributors)
+* [**`License`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#license)
+* [**`Credit`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#credit)
+* [**`Contributing`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#contributing)
+* [**`Code Of Conduct`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#code-of-conduct)
+* [**`Security`**](https://github.com/Infinium-Inc/Othello?tab=readme-ov-file#security)
 
 <br><br>
 <div align="center">
@@ -56,26 +56,26 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 
 </div>
 
-1. Open the [**latest release**](https://github.com/a-tesseract/Othello/releases/tag/v1.1.0 "v1.1.0").
+1. Open the [**latest release**](https://github.com/Infinium-Inc/Othello/releases/tag/v1.1.0 "v1.1.0").
 
-2. Install the [`Source code`](https://github.com/a-tesseract/Othello/archive/refs/tags/v1.1.0.zip "Source Code installation"). 
+2. Install the [`Source code`](https://github.com/Infinium-Inc/Othello/archive/refs/tags/v1.1.0.zip "Source Code installation"). 
 
-3. Move the [**assets/**](https://github.com/a-tesseract/Othello/tree/v1.1.0/assets) to the following folder: 
+3. Move the [**assets/**](https://github.com/Infinium-Inc/Othello/tree/v1.1.0/assets) to the following folder: 
 `C:\Users\YOUR_USERNAME\AppData\Local\Othello`.
 
-4. Install the needed [*requirements*](https://github.com/a-tesseract/Othello/blob/v1.1.0/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
+4. Install the needed [*requirements*](https://github.com/Infinium-Inc/Othello/blob/v1.1.0/requirements.txt "requirements.txt"), with: `pip install -r requirements.txt`.
 
-5. Run the [`__main__.py`](https://github.com/a-tesseract/Othello/blob/v1.1.0/__main__.py "__main__.py"), which starts the game.
+5. Run the [`__main__.py`](https://github.com/Infinium-Inc/Othello/blob/v1.1.0/__main__.py "__main__.py"), which starts the game.
 
 <br><br>
 <div align="center">
 
-# [**`Contributors`**](https://github.com/a-tesseract/Othello/graphs/contributors "Othello Contributors")
+# [**`Contributors`**](https://github.com/Infinium-Inc/Othello/graphs/contributors "Othello Contributors")
 
 </div>
 
-<a href="https://github.com/a-tesseract/Othello/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=a-tesseract/Othello" height=50>
+<a href="https://github.com/Infinium-Inc/Othello/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Infinium-Inc/Othello" height=50>
 </a>
 
 <br><br>
@@ -85,7 +85,7 @@ It is played on an `8x8 uncheckered board` with `64 identical game pieces` calle
 
 </div>
 
-Othello is licensed under the [**MIT License**](https://github.com/a-tesseract/Othello/blob/main/LICENSE.md "License for Othello").
+Othello is licensed under the [**MIT License**](https://github.com/Infinium-Inc/Othello/blob/main/LICENSE.md "License for Othello").
 
 <br><br>
 <div align="center">
@@ -98,7 +98,7 @@ Othello is licensed under the [**MIT License**](https://github.com/a-tesseract/O
 Thanks to [JetBrains](https://github.com/JetBrains "JetBrains on GitHub"), for providing the [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono) font.
 
 ## Python Modules
-Thanks to on the [modules](https://github.com/a-tesseract/Othello/blob/main/requirements.txt) on which Othello is built on.
+Thanks to on the [modules](https://github.com/Infinium-Inc/Othello/blob/main/requirements.txt) on which Othello is built on.
 
 ## Original Game
 Thanks to **Goro Hasegawa** who is credited for inventing the original board game Othello, also known as *Reversi*.
@@ -109,11 +109,11 @@ Thanks to [Excelidraw](https://github.com/excalidraw/excalidraw "Excelidraw on G
 <br><br>
 <div align="center">
 
-# [**`Contributing`**](https://github.com/a-tesseract/Othello/blob/main/.github/CONTRIBUTING.md "Contributing on Othello")
+# [**`Contributing`**](https://github.com/Infinium-Inc/Othello/blob/main/.github/CONTRIBUTING.md "Contributing on Othello")
 
 </div>
 
-Follow the [CONTRIBUTING.md](https://github.com/a-tesseract/Othello/blob/main/.github/CONTRIBUTING.md "Contributing for Othello") to ensure a smooth contribution process.
+Follow the [CONTRIBUTING.md](https://github.com/Infinium-Inc/Othello/blob/main/.github/CONTRIBUTING.md "Contributing for Othello") to ensure a smooth contribution process.
 
 <br><br>
 <div align="center">
@@ -122,13 +122,13 @@ Follow the [CONTRIBUTING.md](https://github.com/a-tesseract/Othello/blob/main/.g
 
 </div>
 
-Othello has the [**Contributor Covenant Code of Conduct**](https://github.com/a-tesseract/Othello/blob/main/.github/CODE_OF_CONDUCT.md "Code Of Conduct for Othello").
+Othello has the [**Contributor Covenant Code of Conduct**](https://github.com/Infinium-Inc/Othello/blob/main/.github/CODE_OF_CONDUCT.md "Code Of Conduct for Othello").
 
 <br><br>
 <div align="center">
 
-# [**`Security`**](https://github.com/a-tesseract/Othello/blob/main/.github/SECURITY.md "Security on Othello")
+# [**`Security`**](https://github.com/Infinium-Inc/Othello/blob/main/.github/SECURITY.md "Security on Othello")
 
 </div>
 
-To view the security and data safety of Othello, see [`SECURITY.md`](https://github.com/a-tesseract/Othello/blob/main/.github/SECURITY.md "Security on Othello").
+To view the security and data safety of Othello, see [`SECURITY.md`](https://github.com/Infinium-Inc/Othello/blob/main/.github/SECURITY.md "Security on Othello").

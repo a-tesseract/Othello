@@ -366,7 +366,7 @@ class Header(CTkFrame):
         header.rowconfigure(0, weight=1, uniform="a")
 
         header.name = Name(header, logo)
-        header.name.bind("<Button>", lambda _: open_new_tab("https://github.com/a-tesseract/Othello"))
+        header.name.bind("<Button>", lambda _: open_new_tab("https://github.com/Infinium-Inc/Othello"))
         header.name.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
         header.toPlay = ToPlay(header)
@@ -397,7 +397,7 @@ class Name(CTkFrame):
             image=logo,
             anchor="center"
         )
-        name.logo.bind("<Button>", lambda _: open_new_tab("https://github.com/a-tesseract/Othello"))
+        name.logo.bind("<Button>", lambda _: open_new_tab("https://github.com/Infinium-Inc/Othello"))
         name.logo.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
 
         name.name = CTkLabel(
@@ -406,7 +406,7 @@ class Name(CTkFrame):
             font=("JetBrains Mono Bold", 50),
             text_color="#202224"
         )
-        name.name.bind("<Button>", lambda _: open_new_tab("https://github.com/a-tesseract/Othello"))
+        name.name.bind("<Button>", lambda _: open_new_tab("https://github.com/Infinium-Inc/Othello"))
         name.name.grid(row=0, column=1, sticky="nsew", padx=10, pady=10)
 
 class Score(CTkFrame):

@@ -7,7 +7,7 @@ Thank you for considering contributing to Othello! Your help is greatly apprecia
 1. **Fork the repository**: Create a personal fork of the project on GitHub.
 2. **Clone your fork**: Clone your forked repository to your local machine.
     ```sh
-    git clone https://github.com/a-tesseract/Othello.git
+    git clone https://github.com/Infinium-Inc/Othello.git
     ```
 3. **Create a branch**: Create a new branch for your changes.
     ```sh
@@ -42,6 +42,6 @@ Thank you for considering contributing to Othello! Your help is greatly apprecia
 
 ## Code of Conduct
 
-Please adhere to the [Code of Conduct](https://github.com/a-tesseract/Othello/blob/main/.github/CODE_OF_CONDUCT.md) in all your interactions with the project.
+Please adhere to the [Code of Conduct](https://github.com/Infinium-Inc/Othello/blob/main/.github/CODE_OF_CONDUCT.md) in all your interactions with the project.
 
 Thank you for contributing to Othello!
